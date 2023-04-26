@@ -17,9 +17,59 @@
         <main id="finestra-chat" class="bg-white d-flex">
             <!-- divisione del main in due lati -->
             <section id="aside-profilo" class="col-5">
-                <!-- divisione i due div -->
+                <!-- divisione i due div principali con altri due div per notifiche e search-->
+                <div id="sender" class="border-end border-secondary">
+                    <!-- my profilo -->
+                    <div class="d-flex align-items-center">
+                        <div id="" class="pp col-1"><img class="rounded-circle" src="./assets/img/avatar_io.jpg" alt=""></div>
+                        <div class="d-flex justify-content-start col-8">
+                            <div>
+                                Sofia
+                            </div>
+                        </div>
+                        <div class="d-flex col-3">
+                            <i class="fa-solid fa-magnifying-glass" style="color: rgb(177 176 176);"></i>
+                            <i class="fa-solid fa-paperclip" style="color: rgb(177 176 176);"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: rgb(177 176 176);"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- allert notifiche -->
+                <div id="notifiche" class="p-1 d-flex align-items-center">
+                    <div id="" class="col-1 my-1 mx-3 d-flex justify-content-center align-items-center">
+                        <i class="rounded-circle bg-white fa-solid fa-volume-xmark" style="color: rgb(142 218 252);"></i>
+                    </div>
+                    <div id="testo-notifiche" class="col-11">
+                        <span>Ricevi notifiche di nuovi messaggi</span><br>
+                        <a href="#" style="color: rgb(177 176 176);">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- search -->
+                <div id="search-bar">
+                    <input type="search">
+                </div>
+                <!-- secondo div con i contatti -->
+                <div id="contatti" class="overflow-auto">
+                    <div
+                    class=""
+                    v-for="(elem, index) in contacts" :key="index">
+                    <div id="" class="pp col-1"><img class="rounded-circle" :src="elem.avatar" alt=""></div>
+                    <div class="d-flex flex-column justify-content-start col-8">
+                        <div>
+                            {{elem.name}}
+                        </div>
+                        <div id="last-login">
+                            Ultimo messaggio inviato
+                        </div>
+                        </div>
+                        <div class="d-flex col-3">
+                            <i style="color: rgb(177 176 176);">12:00</i>
+                        </div>
+                    </div>
+                </div>
 
             </section>
+            <!-- parte della chat -->
             <section id="aside-chat" class="col-7">
                 <!-- divisione in tre div -->
                 <div id="reciever">
@@ -28,7 +78,7 @@
                     
                     class="d-flex align-items-center"
                     >
-                        <div id="pp" class="col-1"><img class="rounded-circle" src="./assets/img/avatar_1.jpg" alt=""></div>
+                        <div id="" class="pp col-1"><img class="rounded-circle" src="./assets/img/avatar_1.jpg" alt=""></div>
                         <div class="d-flex flex-column justify-content-start col-8">
                             <div>
                                 michele
@@ -45,8 +95,15 @@
 
                     </div>
                 </div>
-                <div id="chat" class="overflow-y-scroll">
-
+                <div id="chat" class="">
+                    <div class="container overflow-auto p-2">
+                        <div class=" card inviato col-4 float-end p-2">
+                            testo inviato
+                        </div>
+                        <div class="card ricevuto col-4 float-start p-1">
+                            testo ricevuto
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex align-items-center" id="scrivi">
                     <i class="fa-regular fa-face-smile"></i>

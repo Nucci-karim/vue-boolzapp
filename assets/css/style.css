@@ -24,7 +24,7 @@
     height: 80%;
 }
 
-#reciever, #scrivi{
+#reciever, #sender, #scrivi, #notifiche{
     height: 10%;
 }
 
@@ -45,11 +45,40 @@ img{
     width: 100%;
 }
 
-#pp{
+.pp{
     margin: 0.5rem 1rem;
 }
 
 #last-login{
     color: gray;
     font-size: small;
+}
+
+#notifiche{
+    background-color: rgb(142 218 252);
+
+}
+
+#search-bar{
+    height: 5%;
+}
+#contatti{
+    height: 75%;
+}
+
+.fa-volume-xmark{
+    padding: 1rem;
+}
+
+#testo-notifiche{
+    font-size: small;
+}
+
+.inviato{
+    margin-left: 80%;
+    background-color: rgb(212 250 186);
+}
+
+.rcevuto{
+    margin-right: 80%;
 }
