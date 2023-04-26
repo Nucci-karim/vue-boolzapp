@@ -1,0 +1,55 @@
+#background{
+    background: linear-gradient(0deg, rgba(216,219,212,1) 85%, rgba(1,150,136,1) 85%);
+    height: 100vh;
+    position: relative;
+}
+
+#finestra-chat{
+    height: 95%;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#aside-chat, #aside-profilo{
+    background-color: rgb(234 234 234);
+    height: 100%;
+}
+
+#chat{
+    background-image: url(../img/mine.jpg);
+    height: 80%;
+}
+
+#reciever, #scrivi{
+    height: 10%;
+}
+
+#scrivi{
+    background-color: rgb(243 238 234);
+}
+
+#scrivi i{
+    font-size: larger;
+    margin: 2rem 1rem;
+}
+#reciever i{
+    font-size: larger;
+    margin: 1rem;
+}
+
+img{
+    width: 100%;
+}
+
+#pp{
+    margin: 0.5rem 1rem;
+}
+
+#last-login{
+    color: gray;
+    font-size: small;
+}
