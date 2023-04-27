@@ -1,17 +1,16 @@
 #background{
     background: linear-gradient(0deg, rgba(216,219,212,1) 85%, rgba(1,150,136,1) 85%);
     height: 100vh;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #finestra-chat{
     height: 95%;
     width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    
 }
 
 #aside-chat, #aside-profilo{
@@ -59,12 +58,20 @@ img{
 
 }
 
-#search-bar{
-    height: 5%;
+/* #search-bar{
+    height: 10%;
+    
+} */
+
+button i{
+    font-size: smaller;
 }
 #contatti{
-    height: 75%;
+    height: 70%;
 }
+/* .contatto{
+    width: 100%;
+} */
 
 .fa-volume-xmark{
     padding: 1rem;
