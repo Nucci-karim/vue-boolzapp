@@ -168,7 +168,16 @@ const { createApp } = Vue
             }
         ],
 
+        sent: [
+            
+            
+        ],
+        recieved: [
+
+        ],
+
         currentActive: 0,
+        addText: '',
       }
     },
     created(){
@@ -177,6 +186,16 @@ const { createApp } = Vue
     methods: {
         setCurrent(i){
             this.currentActive = i
-        }
+        },
+
+        creaMsg(){
+            let messaggio = {
+                text: this.addText
+            }
+
+            if(this.addText != ''){
+                this.sent.push(messaggio);
+            }
+        },
     },
   }).mount('#app')

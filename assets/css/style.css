@@ -82,10 +82,10 @@ button i{
 }
 
 .inviato{
-    margin-left: 80%;
     background-color: rgb(212 250 186);
+    align-self: flex-end;
 }
 
 .rcevuto{
-    margin-right: 80%;
+    align-self: flex-start;
 }

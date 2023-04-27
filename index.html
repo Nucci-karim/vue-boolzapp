@@ -108,19 +108,29 @@
                     </div>
                 </div>
                 <div id="chat" class="">
-                    <div class="container overflow-auto p-2">
+                    <div class="container overflow-auto d-flex flex-column p-2">
                         <div class=" card inviato col-4 float-end p-2">
-                            testo inviato
+                            inviato
                         </div>
                         <div
                          class="card ricevuto col-4 float-start p-2">
                             {{contacts[currentActive].message}}
                         </div>
+                        <div
+                        v-for="(elem, index) in sent" :key="index"
+                         class=" card inviato col-4 float-end p-2">
+                            {{elem.text}}
+                        </div>
+                        <div
+                        v-for="(elem, index) in recieved" :key="index"
+                         class=" card inviato col-4 float-end p-2">
+                            {{elem.text}}
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex align-items-center" id="scrivi">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="text" aria-describedby="addon-wrapping">
+                    <input type="text" class="form-control" v-model="addText" @keyUp.enter="creaMsg" placeholder="Scrivi un messaggio" aria-label="text" aria-describedby="addon-wrapping">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </section>
