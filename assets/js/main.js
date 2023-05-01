@@ -168,14 +168,6 @@ const { createApp } = Vue
             }
         ],
 
-        sent: [
-            
-            
-        ],
-        recieved: [
-
-        ],
-
         currentActive: 0,
         addText: '',
       }
@@ -189,13 +181,41 @@ const { createApp } = Vue
         },
 
         creaMsg(){
+            
             let messaggio = {
-                text: this.addText
+                date: '10/01/2020 15:30:55',
+                message: this.addText,
+                status: 'sent' 
             }
 
             if(this.addText != ''){
-                this.sent.push(messaggio);
+                this.contacts[this.currentActive].messages.push(messaggio)
+                this.addText = ''
+            }
+
+            // risposta automatica
+            setTimeout(()=>{
+                this.contacts[this.currentActive].messages.push(
+                    {date: '10/01/2020 15:30:57',
+                    message: 'ok',
+                    status: 'recieved' })
+            }, 2000)
+        },
+
+        searchContact() {
+            let input = document.getElementById('searchbar').value
+            input=input.toLowerCase();
+            let x = this.contacts.name;
+            
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display="none";
+                }
+                else {
+                    x[i].style.display="list-item";				
+                }
             }
         },
+
     },
   }).mount('#app')
