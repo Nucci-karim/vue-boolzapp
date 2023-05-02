@@ -170,6 +170,7 @@ const { createApp } = Vue
 
         currentActive: 0,
         addText: '',
+        ricerca: '',
       }
     },
     created(){
@@ -203,18 +204,15 @@ const { createApp } = Vue
         },
 
         searchContact() {
-            let input = document.getElementById('searchbar').value
-            input=input.toLowerCase();
-            let x = this.contacts.name;
+
+            this.contacts.forEach((elem) => {
+                if(elem.name.toLowerCase().includes(this.ricerca.toLowerCase())){
+                    elem.visible = true
+                }else {
+                    elem.visible = false
+                }
+            })
             
-            for (i = 0; i < x.length; i++) {
-                if (!x[i].innerHTML.toLowerCase().includes(input)) {
-                    x[i].style.display="none";
-                }
-                else {
-                    x[i].style.display="list-item";				
-                }
-            }
         },
 
     },

@@ -50,7 +50,9 @@
                         <span class="bg-white btn-outline-secondary p-0 border border-secondary border-end-0 ms-1" type="submit">
                             <i class="fa-solid fa-magnifying-glass px-2 " style="color: rgb(177 176 176);"></i>
                         </span>
-                        <input id="searchbar" class=" m-0 p-0" type="search" placeholder="Search" onkeyup="searchContact()">
+                        <input id="searchbar" class=" m-0 p-0" type="search" placeholder="Search" 
+                        v-model="ricerca"
+                        @keyUp="searchContact()">
                       <!-- </form> -->
                 </div>
                 <!-- secondo div con i contatti -->
@@ -59,7 +61,7 @@
                     id="contatto"
                     class="d-flex justify-content-start"
                     v-for="(elem, index) in contacts" :key="index"
-                    :class= "currentActive === index ? 'active' :''" @click="setCurrent(index)"
+                    :class= "elem.visible ? 'd-flex' : 'd-none'" @click="setCurrent(index)"
                     >
                         <div id="" class="pp col-1">
                             <img class="rounded-circle" :src="elem.avatar" alt="">
